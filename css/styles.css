@@ -27,7 +27,7 @@ body {
 .hero {
   height: 100vh;
   background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+    linear-gradient(rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.023)),
     url('../assets/3.webp') center/cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ body {
 }
 /* Glass effect container */
 .hero-content {
-  background: rgba(30, 30, 30, 0.3);
+  background: rgba(30, 30, 30, 0.74);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 2.5rem 3rem;
