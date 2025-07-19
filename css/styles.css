@@ -1,0 +1,493 @@
+/* Reset */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #0a0a0a;
+  color: #eaeaea;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+    url('../assets/3.webp') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  animation: fadeInUp 1s ease forwards;
+  position: relative;
+  z-index: 1;
+}
+/* Glass effect container */
+.hero-content {
+  background: rgba(30, 30, 30, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2.5rem 3rem;
+  max-width: 720px;
+  box-shadow: 0 0 30px rgba(255, 71, 191, 0.4);
+  border: 1px solid rgba(255, 71, 87, 0.25);
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  letter-spacing: 0.15em;
+  color: #ff4edb; /* Rose néon */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #ff4757;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: #eee;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  text-shadow: 0 0 6px rgba(255, 71, 87, 0.5);
+  font-weight: 400;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff47bb, #ff6bb0);
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 15px #ff4757;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 6px #ff4757);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, #ff6b81, #ff4757);
+  box-shadow: 0 0 25px #ff6b81;
+  transform: scale(1.08);
+  outline: none;
+}
+
+/* Game Presentation Section */
+.section {
+  padding: 6rem 1.5rem 8rem;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 2.7rem;
+  color: #ff4edb; /* Rose néon */
+  margin-bottom: 1rem;
+  color: #ff4edb; /* Rose néon */
+  letter-spacing: 0.05em;
+}
+
+.section p {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  font-size: 1.15rem;
+  opacity: 0.85;
+  color: #ccc;
+  line-height: 1.65;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+.feature {
+  background: rgba(40, 40, 40, 0.4);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0 25px rgba(255, 71, 187, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+  width: 100%;
+  max-width: 320px;
+}
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 45px #ff47b5;
+}
+
+.feature h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+  color: #ff6b81;
+  text-shadow: 0 0 6px #ff6b81;
+}
+.feature p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* Modal for game */
+.game-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.96);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 2rem 1rem;
+}
+.game-modal iframe {
+  width: 90vw;
+  max-width: 1280px;
+  height: 80vh;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(218, 200, 201, 0.5);
+  border: none;
+  background: #111;
+  animation: fadeInUp 0.6s ease forwards;
+}
+.close-btn {
+  margin-top: 1.5rem;
+  background: #222;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.9rem 2.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 71, 87, 0.3);
+}
+.close-btn:hover, .close-btn:focus {
+  background: #ff4757;
+  box-shadow: 0 0 25px #ff4757;
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+  .hero-content {
+    padding: 2rem;
+  }
+  .btn-primary {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+  .section h2, .studio h2 {
+    font-size: 2rem;
+  }
+  .feature {
+    max-width: 100%;
+  }
+}
+
+/* Recruitment section */
+.recruitment {
+  background: #111;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.recruitment h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.recruitment-intro {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.job-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.job-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(255,255,255,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.job-card h3 {
+  color: #ff4edb; /* Rose néon */
+  margin-bottom: 15px;
+}
+
+.job-card p {
+  opacity: 0.85;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Secondary button */
+.btn-secondary {
+  padding: 10px 25px;
+  background: #ff47ce;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #ff6b81;
+}
+
+/* === TEAM SECTION === */
+.team {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+  color: #eee;
+  font-family: 'Roboto', sans-serif;
+}
+
+.team h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #ff4edb; /* Rose néon */
+  text-shadow: 0 0 10px rgba(255, 78, 219, 0.5);
+}
+
+.team p {
+  color: #bbb;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* === TEAM CARD === */
+.team-card {
+  background: #141414;
+  border: 2px solid rgba(255, 78, 219, 0.3);
+  padding: 25px 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 78, 219, 0.2);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 234, 0.4);
+  border-color: rgba(0, 255, 234, 0.6);
+}
+
+/* === TEAM PHOTO === */
+.team-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #00ffee;
+  box-shadow: 0 0 10px rgba(0, 255, 234, 0.4);
+}
+
+/* === TEAM NAME === */
+.team-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #00ffee; /* Cyan néon */
+  text-shadow: 0 0 5px rgba(0, 255, 234, 0.4);
+}
+
+/* === ROLE === */
+.team-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.team-card {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.team-card:nth-child(1) { animation-delay: 0.2s; }
+.team-card:nth-child(2) { animation-delay: 0.4s; }
+.team-card:nth-child(3) { animation-delay: 0.6s; }
+.team-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ===== TEAM ===== */
+.team {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--color-bg-gradient-start);
+  color: var(--color-text-light);
+}
+
+.team h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--color-primary);
+}
+
+.team p {
+  color: var(--color-muted-text);
+  margin-bottom: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.team-card {
+  background: var(--color-bg-glass);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 20px var(--color-shadow-glass);
+  transition: box-shadow 0.3s ease;
+  max-width: 250px;
+}
+
+.team-card:hover {
+  box-shadow: 0 0 35px var(--color-primary);
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%; /* rond pour la team */
+  margin-bottom: 1.2rem;
+}
+
+.team-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+}
+
+/* ===== BESTIAIRE ===== */
+.bestiary {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--color-bg-gradient-start);
+  color: var(--color-text-light);
+}
+
+.bestiary h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--color-primary);
+}
+
+.bestiary p {
+  color: var(--color-muted-text);
+  margin-bottom: 50px;
+}
+
+.bestiary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.bestiary-card {
+  background: var(--color-bg-glass);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 20px var(--color-shadow-glass);
+  border: 1px solid var(--color-border-glass);
+  transition: box-shadow 0.3s ease;
+  max-width: 280px;
+}
+
+.bestiary-card:hover {
+  box-shadow: 0 0 35px var(--color-primary);
+}
+
+.bestiary-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1.2rem;
+  border-radius: 0; /* PAS de rond pour le bestiaire */
+  border: none;
+}
+
+.bestiary-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+}
