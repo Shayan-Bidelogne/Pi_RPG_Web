@@ -491,3 +491,47 @@ body {
   font-size: 1.4rem;
   color: var(--color-primary);
 }
+
+/* ==== LEARN MORE BANNER ==== */
+.learn-more-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px 50px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 0, 200, 0.3);
+  box-shadow: 0 -5px 20px rgba(255, 0, 200, 0.1);
+  position: relative;
+}
+
+.learn-banner-content {
+  max-width: 70%;
+}
+
+.learn-banner-content h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #ff4edb;
+  text-shadow: 0 0 8px rgba(255, 78, 219, 0.6);
+  margin-bottom: 8px;
+}
+
+.learn-banner-content p {
+  color: #ccc;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .learn-more-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .learn-banner-content {
+    max-width: 100%;
+  }
+}
