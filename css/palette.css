@@ -1,11 +1,16 @@
 :root {
-  --color-text: #ffffff;
-  --color-muted: rgba(255,255,255,0.7);
-  --color-line: rgba(255,255,255,0.2);
+  /* Couleurs principales */
+  --background-dark: #121212;
+  --background-medium: #222222;
+  --background-medium-alt: #1b1b1b;
+  --background-table-header: #1565c0;
 
-  --accent1: #00f0ff;
-  --accent2: #ff00c8;
+  --text-light: #eeeeee;
+  --text-muted: #666666;
+  --text-on-button: #121212;
 
-  --glow1: rgba(0, 240, 255, 0.7);
-  --glow2: rgba(255, 0, 200, 0.7);
+  --blue-primary: #42a5f5;
+  --blue-primary-hover: #1e88e5;
+
+  --white: #ffffff;
 }
