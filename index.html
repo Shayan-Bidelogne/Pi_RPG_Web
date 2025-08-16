@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VZMG3ZNVC"></script>
 <script>
@@ -16,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/palette.css" />
-
+  <link rel="stylesheet" href="css/scroll-banner.css" />
 </head>
 <body>
 
@@ -54,45 +56,50 @@
   <div id="bestiary-container"></div>
 
   <!-- Recruitment section -->
-  <section class="recruitment">
+  <section class="section">
     <h2>Join Our Team</h2>
     <p class="recruitment-intro">
       We’re growing our indie studio and looking for passionate creators to join us.  
-      Be part of an adventure beyond the game!
+      <br>Be part of an adventure beyond the game!
+    </p>
+    <p class="recruitment-intro">
+      Simple hiring process, revenue sharing model, and a friendly community 💝
     </p>
 
     <div class="job-cards">
-      <div class="team-card">
-        <h3>🎨 Pixel Artist</h3>
-        <p>Help us bring new worlds to life with charming pixel art and creative animations.</p>
-        <br>
-        <a href="https://discord.gg/mexYcAFEc9" target="_blank" class="btn-secondary">Apply Now</a>
-      </div>
-      <div class="team-card">
-        <h3>📶 SM Manager</h3>
-        <p>Crafts engaging content and manages the online presence of Pi RPG, connecting the game with its community.</p>
-        <br>
-        <a href="https://discord.gg/mexYcAFEc9" target="_blank" class="btn-secondary">Apply Now</a>
-      </div>
-      <div class="team-card">
+            <div class="team-card">
         <h3>💻 Godot Developer</h3>
         <p>Work on gameplay mechanics, performance, and features that enhance the player experience.</p>
         <br>
         <a href="https://discord.gg/mexYcAFEc9" target="_blank" class="btn-secondary">Apply Now</a>
       </div>
+            <div class="team-card">
+        <h3>📶 Social Manager</h3>
+        <p>Crafts engaging content and manages the online presence of Pi RPG, connecting the game with its community.</p>
+        <br>
+        <a href="https://discord.gg/mexYcAFEc9" target="_blank" class="btn-secondary">Apply Now</a>
+      </div>
+      <div class="team-card">
+        <h3>🎨 Pixel Animator</h3>
+        <p>Help us bring new worlds to life with charming pixel art and creative animations.</p>
+        <br>
+        <a href="https://discord.gg/mexYcAFEc9" target="_blank" class="btn-secondary">Apply Now</a>
+      </div>
+
     </div>
 
   </section>
-<!-- ==== LEARN MORE BANNER ==== -->
+
 <section class="learn-more-banner">
   <div class="learn-banner-content">
     <h2>Want to Dive Deeper?</h2>
     <p>Explore hidden lore, behind-the-scenes secrets & exclusive updates!</p>
   </div>
-  <button class="btn-primary" onclick="window.location.href='roaadmap.html'">
+  <button class="btn-primary" onclick="window.location.href='roadmap.html'">
     Learn More →
   </button>
 </section>
+
 
   <!-- Game modal window -->
   <div class="game-modal" id="gameModal">
@@ -113,6 +120,8 @@
       })
       .catch(error => console.error('Error loading bestiary:', error));
   </script>
+<div id="scroll-banner-container"></div>
+<script src="js/scroll-banner.js"></script>
 
 </body>
 </html>

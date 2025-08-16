@@ -1,16 +1,45 @@
 :root {
-  /* Couleurs principales */
-  --background-dark: #121212;
-  --background-medium: #222222;
-  --background-medium-alt: #1b1b1b;
-  --background-table-header: #1565c0;
+  /* === Bases sombres === */
+  --color-bg-main: #0a0a0a;
+  --color-bg-dark: #111;
+  --color-bg-glass: rgba(30, 30, 30, 0.74);
+  --color-bg-gradient-start: #0d0d0d;
+  --color-bg-gradient-end: #1a1a1a;
+  --color-bg-card: #141414;
+  --color-bg-feature: rgba(40, 40, 40, 0.4);
+  --color-bg-modal: rgba(0, 0, 0, 0.96);
+  --color-bg-banner: rgba(20, 20, 20, 0.8);
 
-  --text-light: #eeeeee;
-  --text-muted: #666666;
-  --text-on-button: #121212;
+  /* === Texte === */
+  --color-text-light: #f3e2c6; /* sable clair */
+  --color-text-muted: #d6c4a8;
+  --color-text-secondary: #c2b08f;
+  --color-text-dark: #222;
+  --color-text-white: #fff;
 
-  --blue-primary: #42a5f5;
-  --blue-primary-hover: #1e88e5;
+  /* === Palette principale (sable/or) === */
+  --color-primary: #ecba60;       /* or chaud */
+  --color-primary-dark: #d29d3c;  /* or profond */
+  --color-primary-light: #f3e2c6; /* sable */
+  
+  --color-secondary: #b8894d;     /* bronze */
+  --color-accent: #f3e2c6;        /* sable clair */
+  --color-accent2: #ecba60;       /* doré */
+  --color-accent3: #ffe9b2;       /* ivoire chaud */
+  --color-accent4: #8c6a2f;       /* brun doré */
 
-  --white: #ffffff;
+  /* === Autres === */
+  --color-cyan: #9dd9d2; /* une touche turquoise pastel pour contraste */
+
+  /* Ombres / Bordures */
+  --color-shadow-glass: rgba(236, 186, 96, 0.4);
+  --color-shadow-card: rgba(243, 226, 198, 0.15);
+  --color-shadow-modal: rgba(236, 186, 96, 0.25);
+
+  --color-border-glass: rgba(243, 226, 198, 0.25);
+  --color-border-card: rgba(236, 186, 96, 0.35);
+
+  /* Dégradés */
+  --color-gradient-hero1: rgba(243, 226, 198, 0.1);
+  --color-gradient-hero2: rgba(236, 186, 96, 0.08);
 }

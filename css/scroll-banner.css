@@ -1,0 +1,31 @@
+.scroll-banner {
+  position: fixed;
+  top: 0; /* collé en haut */
+  width: 100%;
+  background: var(--color-bg-banner);
+  color: var(--color-primary); /* texte or chaud */
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 9999;
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 10px var(--color-shadow-glass);
+  border-bottom: 1px solid var(--color-border-glass);
+}
+
+.scroll-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-text 15s linear infinite;
+}
+
+@keyframes scroll-text {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.scroll-banner:hover .scroll-content {
+  animation-play-state: paused;
+}

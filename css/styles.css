@@ -1,34 +1,32 @@
-/* Reset */
+@import url('./palette.css');
+
+/* === Reset === */
 *, *::before, *::after {
-  margin: 0; padding: 0; box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
-  background: #0a0a0a;
-  color: #eaeaea;
+  background: var(--color-bg-main);
+  color: var(--color-text-light);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* Fade in animation */
+
+/* === Animations === */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
-/* Hero */
+/* === Hero === */
 .hero {
   height: 100vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.023)),
-    url('../assets/3.webp') center/cover no-repeat;
+  background: linear-gradient(var(--color-gradient-hero1), var(--color-gradient-hero2)), url('../assets/3.webp') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,61 +37,68 @@ body {
   position: relative;
   z-index: 1;
 }
-/* Glass effect container */
 .hero-content {
-  background: rgba(30, 30, 30, 0.74);
+  background: var(--color-bg-glass);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 2.5rem 3rem;
   max-width: 720px;
-  box-shadow: 0 0 30px rgba(255, 71, 191, 0.4);
-  border: 1px solid rgba(255, 71, 87, 0.25);
+  box-shadow: 0 0 30px var(--color-shadow-glass);
+  border: 1px solid var(--color-border-glass);
 }
-
 .hero h1 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   font-size: clamp(3rem, 8vw, 4.5rem);
   letter-spacing: 0.15em;
-  color: #ff4edb; /* Rose néon */
+  color: var(--color-primary);
   margin-bottom: 1rem;
   text-transform: uppercase;
-  text-shadow: 0 0 10px #ff4757;
+  text-shadow: 0 0 10px var(--color-accent);
 }
-
 .hero p {
   font-size: clamp(1rem, 2.5vw, 1.4rem);
-  color: #eee;
+  color: var(--color-text-white);
   margin-bottom: 2.5rem;
   opacity: 0.9;
-  text-shadow: 0 0 6px rgba(255, 71, 87, 0.5);
+  text-shadow: 0 0 6px var(--color-accent2);
   font-weight: 400;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #ff47bb, #ff6bb0);
+/* === Boutons === */
+.btn-primary, .btn-secondary, .btn-social {
+  font-family: 'Orbitron', sans-serif;
   border: none;
   border-radius: 40px;
-  color: white;
-  font-size: 1.3rem;
+  color: var(--color-text-white);
   font-weight: 700;
-  padding: 1rem 3rem;
   cursor: pointer;
-  transition: all 0.35s ease;
-  box-shadow: 0 0 15px #ff4757;
-  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
   text-transform: uppercase;
-  filter: drop-shadow(0 0 6px #ff4757);
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 15px var(--color-accent);
+  padding: 1rem 3rem;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-light));
 }
-.btn-primary:hover,
-.btn-primary:focus {
-  background: linear-gradient(135deg, #ff6b81, #ff4757);
-  box-shadow: 0 0 25px #ff6b81;
+.btn-primary:hover, .btn-primary:focus,
+.btn-secondary:hover, .btn-secondary:focus,
+.btn-social:hover, .btn-social:focus {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  box-shadow: 0 0 25px var(--color-secondary);
   transform: scale(1.08);
   outline: none;
 }
+.btn-secondary {
+  background: var(--color-accent2);
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px 25px;
+}
+.btn-secondary:hover {
+  background: var(--color-secondary);
+}
 
-/* Game Presentation Section */
+/* === Section === */
 .section {
   padding: 6rem 1.5rem 8rem;
   max-width: 1080px;
@@ -101,38 +106,35 @@ body {
   text-align: center;
   animation: fadeInUp 1.2s ease forwards;
 }
-
 .section h2 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   font-size: 2.7rem;
-  color: #ff4edb; /* Rose néon */
+  color: var(--color-primary);
   margin-bottom: 1rem;
-  color: #ff4edb; /* Rose néon */
   letter-spacing: 0.05em;
 }
-
 .section p {
   max-width: 680px;
   margin: 0 auto 3rem;
   font-size: 1.15rem;
   opacity: 0.85;
-  color: #ccc;
+  color: var(--color-text-secondary);
   line-height: 1.65;
 }
 
+/* === Features === */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
   gap: 3rem;
   justify-items: center;
 }
-
 .feature {
-  background: rgba(40, 40, 40, 0.4);
+  background: var(--color-bg-feature);
   border-radius: 20px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 0 25px rgba(255, 71, 187, 0.25);
+  box-shadow: 0 0 25px var(--color-accent3);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   cursor: default;
   width: 100%;
@@ -140,29 +142,28 @@ body {
 }
 .feature:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 45px #ff47b5;
+  box-shadow: 0 0 45px var(--color-accent3);
 }
-
 .feature h3 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   font-size: 1.7rem;
   margin-bottom: 0.8rem;
-  color: #ff6b81;
-  text-shadow: 0 0 6px #ff6b81;
+  color: var(--color-secondary);
+  text-shadow: 0 0 6px var(--color-secondary);
 }
 .feature p {
   font-size: 1rem;
-  color: #ddd;
+  color: var(--color-text-white);
   line-height: 1.5;
 }
 
-/* Modal for game */
+/* === Modal === */
 .game-modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.96);
+  background: var(--color-bg-modal);
   backdrop-filter: blur(4px);
   display: flex;
   flex-direction: column;
@@ -176,71 +177,48 @@ body {
   max-width: 1280px;
   height: 80vh;
   border-radius: 15px;
-  box-shadow: 0 0 40px rgba(218, 200, 201, 0.5);
+  box-shadow: 0 0 40px var(--color-shadow-modal);
   border: none;
-  background: #111;
+  background: var(--color-bg-dark);
   animation: fadeInUp 0.6s ease forwards;
 }
 .close-btn {
   margin-top: 1.5rem;
-  background: #222;
+  background: var(--color-text-dark);
   border: none;
   border-radius: 30px;
-  color: white;
+  color: var(--color-text-white);
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.9rem 2.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 71, 87, 0.3);
+  box-shadow: 0 0 15px var(--color-accent2);
 }
 .close-btn:hover, .close-btn:focus {
-  background: #ff4757;
-  box-shadow: 0 0 25px #ff4757;
+  background: var(--color-accent);
+  box-shadow: 0 0 25px var(--color-accent);
   transform: scale(1.1);
   outline: none;
 }
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2.6rem;
-  }
-  .hero-content {
-    padding: 2rem;
-  }
-  .btn-primary {
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-  }
-  .section h2, .studio h2 {
-    font-size: 2rem;
-  }
-  .feature {
-    max-width: 100%;
-  }
-}
-
-/* Recruitment section */
+/* === Recruitment === */
 .recruitment {
-  background: #111;
+  background: var(--color-bg-dark);
   padding: 80px 20px;
   text-align: center;
 }
-
 .recruitment h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 15px;
 }
-
 .recruitment-intro {
   max-width: 700px;
   margin: 0 auto 50px;
   opacity: 0.8;
   font-size: 1.1rem;
 }
-
 .job-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -248,320 +226,154 @@ body {
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .job-card {
-  background: #1a1a1a;
+  background: var(--color-bg-gradient-end);
   padding: 30px;
   border-radius: 15px;
   text-align: left;
-  box-shadow: 0 0 15px rgba(255,255,255,0.05);
+  box-shadow: 0 0 15px var(--color-shadow-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .job-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+  box-shadow: 0 0 20px var(--color-shadow-card);
 }
-
 .job-card h3 {
-  color: #ff4edb; /* Rose néon */
+  color: var(--color-primary);
   margin-bottom: 15px;
 }
-
 .job-card p {
   opacity: 0.85;
   margin-bottom: 20px;
   line-height: 1.4;
 }
 
-/* Secondary button */
-.btn-secondary {
-  padding: 10px 25px;
-  background: #ff47ce;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background: #ff6b81;
-}
-
-/* === TEAM SECTION === */
-.team {
+/* === Team & Bestiary (homogénéisé) === */
+.team, .bestiary {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
-  color: #eee;
-  font-family: 'Roboto', sans-serif;
+  background: var(--color-bg-gradient-start);
+  color: var(--color-text-light);
 }
-
-.team h2 {
+.team h2, .bestiary h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.2rem;
   margin-bottom: 15px;
-  color: #ff4edb; /* Rose néon */
-  text-shadow: 0 0 10px rgba(255, 78, 219, 0.5);
+  color: var(--color-primary);
 }
-
-.team p {
-  color: #bbb;
+.team p, .bestiary p {
+  color: var(--color-text-muted);
   margin-bottom: 50px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   font-size: 1rem;
 }
-
-.team-grid {
+.team-grid, .bestiary-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
   justify-items: center;
 }
-
-/* === TEAM CARD === */
-.team-card {
-  background: #141414;
-  border: 2px solid rgba(255, 78, 219, 0.3);
-  padding: 25px 15px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 78, 219, 0.2);
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 0 25px rgba(0, 255, 234, 0.4);
-  border-color: rgba(0, 255, 234, 0.6);
-}
-
-/* === TEAM PHOTO === */
-.team-photo {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 2px solid #00ffee;
-  box-shadow: 0 0 10px rgba(0, 255, 234, 0.4);
-}
-
-/* === TEAM NAME === */
-.team-card h3 {
-  margin: 10px 0 5px;
-  font-size: 1.2rem;
-  color: #00ffee; /* Cyan néon */
-  text-shadow: 0 0 5px rgba(0, 255, 234, 0.4);
-}
-
-/* === ROLE === */
-.team-card p {
-  color: #ccc;
-  font-size: 0.95rem;
-}
-
-.team-card {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.team-card:nth-child(1) { animation-delay: 0.2s; }
-.team-card:nth-child(2) { animation-delay: 0.4s; }
-.team-card:nth-child(3) { animation-delay: 0.6s; }
-.team-card:nth-child(4) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-
-
-/* ===== TEAM ===== */
-.team {
-  text-align: center;
-  padding: 60px 20px;
-  background: var(--color-bg-gradient-start);
-  color: var(--color-text-light);
-}
-
-.team h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  color: var(--color-primary);
-}
-
-.team p {
-  color: var(--color-muted-text);
-  margin-bottom: 50px;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  justify-items: center;
-}
-
-.team-card {
-  background: var(--color-bg-glass);
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 0 20px var(--color-shadow-glass);
-  transition: box-shadow 0.3s ease;
-  max-width: 250px;
-}
-
-.team-card:hover {
-  box-shadow: 0 0 35px var(--color-primary);
-}
-
-.team-photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%; /* rond pour la team */
-  margin-bottom: 1.2rem;
-}
-
-.team-card h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.4rem;
-  color: var(--color-primary);
-}
-
-/* ===== BESTIAIRE ===== */
-.bestiary {
-  text-align: center;
-  padding: 60px 20px;
-  background: var(--color-bg-gradient-start);
-  color: var(--color-text-light);
-}
-
-.bestiary h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  color: var(--color-primary);
-}
-
-.bestiary p {
-  color: var(--color-muted-text);
-  margin-bottom: 50px;
-}
-
-.bestiary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  justify-items: center;
-}
-
-.bestiary-card {
+.team-card, .bestiary-card {
   background: var(--color-bg-glass);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 0 20px var(--color-shadow-glass);
   border: 1px solid var(--color-border-glass);
   transition: box-shadow 0.3s ease;
-  max-width: 280px;
+  max-width: 250px;
 }
-
-.bestiary-card:hover {
+.team-card:hover, .bestiary-card:hover {
   box-shadow: 0 0 35px var(--color-primary);
 }
-
-.bestiary-photo {
+.team-photo, .bestiary-photo {
   width: 120px;
   height: 120px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
   margin-bottom: 1.2rem;
-  border-radius: 0; /* PAS de rond pour le bestiaire */
+}
+.bestiary-photo {
+  object-fit: contain;
+  border-radius: 0;
   border: none;
 }
-
-.bestiary-card h3 {
+.team-card h3, .bestiary-card h3 {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.4rem;
   color: var(--color-primary);
 }
+.team-card p, .bestiary-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
 
-/* ==== LEARN MORE BANNER ==== */
+/* === Learn More Banner === */
 .learn-more-banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 30px 50px;
-  background: rgba(20, 20, 20, 0.8);
+  background: var(--color-bg-banner);
   backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 0, 200, 0.3);
-  box-shadow: 0 -5px 20px rgba(255, 0, 200, 0.1);
+  border-top: 1px solid var(--color-border-glass);
+  box-shadow: 0 -5px 20px var(--color-shadow-glass);
   position: relative;
 }
-
 .learn-banner-content {
   max-width: 70%;
 }
-
 .learn-banner-content h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
-  color: #ff4edb;
-  text-shadow: 0 0 8px rgba(255, 78, 219, 0.6);
+  color: var(--color-primary);
+  text-shadow: 0 0 8px var(--color-shadow-card);
   margin-bottom: 8px;
 }
-
 .learn-banner-content p {
-  color: #ccc;
+  color: var(--color-text-secondary);
   font-size: 1rem;
   opacity: 0.85;
 }
 
-
-/* Responsive: stack on small screens */
-@media (max-width: 768px) {
-  .learn-more-banner {
-    flex-direction: column;
-    text-align: center;
-  }
-  .learn-banner-content {
-    max-width: 100%;
-  }
+/* === Social Icons === */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.btn-social {
+  padding: 10px 25px;
+  background: var(--color-accent2);
+  border: none;
+  border-radius: 10px;
+  color: var(--color-text-white);
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.btn-social:hover {
+  transform: scale(1.05);
 }
 
-  .tweets-container {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 12px;
-    max-width: 720px;
-    width: 100%;
-    justify-content: center;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    overflow-x: auto;
-  }
-  .tweets-container blockquote {
-    flex: 0 0 220px;
-    max-width: 220px;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box;
-  }
-  @media (max-width: 700px) {
-    .tweets-container {
-      flex-wrap: wrap;
-      max-width: 100%;
-    }
-    .tweets-container blockquote {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-  }
+/* === Responsive === */
+@media (max-width: 768px) {
+  .hero h1, .section h2, .team h2, .bestiary h2 { font-size: 2rem; }
+  .hero-content { padding: 2rem; }
+  .btn-primary, .btn-secondary, .btn-social { padding: 1rem 2.5rem; font-size: 1.1rem; }
+  .feature { max-width: 100%; }
+  .learn-more-banner { flex-direction: column; text-align: center; }
+  .learn-banner-content { max-width: 100%; }
+}
+
+/* === Social hover colors (non palette, réseaux) === */
+.btn-social.twitter:hover { background-color: #1DA1F2; color: white; }
+.btn-social.reddit:hover { background-color: #FF4500; color: white; }
+.btn-social.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: white; }
+.btn-social.tiktok:hover { background-color: #69C9D0; color: white; }

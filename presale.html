@@ -1,134 +1,97 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="css/palette.css" />
   <link rel="stylesheet" href="css/presale.css" />
 
-  <title>Prévente Alpha – Pi RPG</title>
+  <title>Alpha Pre-Sale – Pi RPG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 
-  <style>
-    /* Animation pulsante pour bouton */
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 8px var(--blue-primary); }
-      50% { box-shadow: 0 0 20px var(--blue-primary-hover); }
-    }
-
-    /* Bandeau urgence */
-    .urgency-banner {
-      background: linear-gradient(90deg, #f1e2ca, #f1faee);
-color: #1e90ff; /* Bleu Dodger */
-      text-align: center;
-      font-weight: 700;
-      padding: 0.8rem 1rem;
-      font-size: 1.2rem;
-      user-select: none;
-      border-radius: 5px;
-      margin-bottom: 1.5rem;
-    }
-
-    /* CTA section spacing */
-    .cta-section {
-      margin: 2rem 0 3rem;
-      text-align: center;
-    }
-
-    /* Mini-badge dispo limitée */
-    .limited-stock {
-      color: #e63946;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-left: 0.5rem;
-    }
-  </style>
 </head>
 <body>
 
-  <main class="container" role="main" aria-label="Page de précommande de Pi RPG">
+  <main class="container" role="main" aria-label="Pi RPG Pre-Order Page">
 
     <div class="urgency-banner" aria-live="polite" role="alert">
-      🔥 Offre limitée : <strong>20 places</strong> uniquement !
+      🔥 Limited offer: <strong>only 20 spots</strong> available!
     </div>
 
-    <h1>Précommandez l’accès exclusif à l’Alpha de <em>Pi RPG</em></h1>
-    <p><strong>Découvrez en avant-première notre système de combat unique</strong> et soutenez le développement d’un jeu indé ambitieux. Bénéficiez d’avantages exclusifs réservés aux premiers supporters.</p>
+    <h1>Pre-order exclusive access to the <em>Pi RPG</em> Alpha</h1>
+    <p><strong>Get a sneak peek at our unique combat system</strong> and support the development of an ambitious indie game. Enjoy exclusive perks reserved for early supporters.</p>
 
-    <h2>Où en est le jeu ?</h2>
-    <p>Le prototype est presque terminé. L’Alpha jouable sera disponible dès <strong>octobre 2025</strong>. Testez le cœur du gameplay : combats, compétences, et exploration sur une carte riche.</p>
+    <h2>Where is the game at?</h2>
+    <p>The prototype is almost complete. The playable Alpha will be available from <strong>October 2025</strong>. Test the core gameplay: combat, abilities, and exploration on a rich map.</p>
 
-    <h2>Pourquoi précommander maintenant ?</h2>
+    <h2>Why pre-order now?</h2>
     <ul>
-      <li><strong>Accès anticipé</strong> à l’Alpha et au jeu final.</li>
-      <li>Mises à jour <strong>gratuites</strong> jusqu’au lancement officiel.</li>
-      <li>Bonus exclusifs : skins, rôle Discord privé, et plus encore.</li>
-      <li>Votre nom dans les crédits <strong>en remerciement</strong>.</li>
-      <li><strong>Offre limitée</strong> avec un tarif préférentiel — ne manquez pas cette chance !</li>
+      <li><strong>Early access</strong> to the Alpha and the full game.</li>
+      <li><strong>Free updates</strong> until the official launch.</li>
+      <li>Exclusive bonuses: skins, private Discord role, and more.</li>
+      <li>Your name in the credits <strong>as a thank you</strong>.</li>
+      <li><strong>Limited offer</strong> at a special price — don’t miss this chance!</li>
     </ul>
 
-    <h2>Nos offres</h2>
+    <h2>Our offers</h2>
     <table>
       <thead>
         <tr>
-          <th>Offre</th>
-          <th>Prix</th>
-          <th>Contenu</th>
+          <th>Package</th>
+          <th>Price</th>
+          <th>Contents</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Pi <br>Supporter</td>
-          <td>5 € <span class="limited-stock"><br>Découverte</span></td>
-          <td>Accès version finale + nom dans les crédits</td>
+          <td>€5 <span class="limited-stock"><br>Discovery</span></td>
+          <td>Access to the final version + name in the credits</td>
         </tr>
         <tr>
           <td>Pi <br>Player</td>
-          <td>15 € <span class="limited-stock"><br>Qualité</span></td>
-          <td>Supporter + accès Alpha + skin exclusif + Discord privé</td>
+          <td>€15 <span class="limited-stock"><br>Quality</span></td>
+          <td>Supporter + Alpha access + exclusive skin + private Discord</td>
         </tr>
         <tr>
           <td>Pi <br>Ultimate</td>
-          <td>30 € <span class="limited-stock"><br>Premium</span></td>
-          <td>Player + skill magique exclusif + rôle testeur privilégié</td>
+          <td>€30 <span class="limited-stock"><br>Premium</span></td>
+          <td>Player + exclusive magic skill + privileged tester role</td>
         </tr>
       </tbody>
     </table>
 
-    <section class="cta-section" aria-label="Bouton de précommande">
+    <section class="cta-section" aria-label="Pre-order Button">
       <button class="btn-primary pulse" onclick="window.location.href='https://tonliendepaiement.com'" aria-describedby="cta-desc">
-        Précommander maintenant
+        Pre-order Now
       </button>
       <p id="cta-desc" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">
-        Paiement sécurisé. Précommande non remboursable. Offre limitée.
+        Secure payment. Pre-order non-refundable. Limited offer.
       </p>
     </section>
 
     <h2>FAQ</h2>
     <dl class="faq">
-      <dt tabindex="0">Recevrai-je le jeu final ?</dt>
-      <dd>Oui, l’accès au jeu complet est garanti avec votre précommande.</dd>
+      <dt tabindex="0">Will I receive the final game?</dt>
+      <dd>Yes, full game access is guaranteed with your pre-order.</dd>
 
-      <dt tabindex="0">Qu’est-ce qu’une Alpha ?</dt>
-      <dd>Une version en développement, jouable mais avec des bugs et contenu limité.</dd>
+      <dt tabindex="0">What is an Alpha?</dt>
+      <dd>A development version, playable but with bugs and limited content.</dd>
 
-      <dt tabindex="0">Quand recevrai-je l’Alpha ?</dt>
-      <dd>L’Alpha sera disponible dès octobre 2025, soyez parmi les premiers à la tester !</dd>
+      <dt tabindex="0">When will I get the Alpha?</dt>
+      <dd>The Alpha will be available from October 2025 — be among the first to test it!</dd>
       
-      <dt tabindex="0">Puis-je me faire rembourser ?</dt>
-      <dd>Non, les précommandes ne sont pas remboursables car elles financent le développement.</dd>
+      <dt tabindex="0">Can I get a refund?</dt>
+      <dd>No, pre-orders are non-refundable as they help fund development.</dd>
     </dl>
 
     <h2>Contact</h2>
-    <p>Rejoignez-nous sur <a href="https://discord.gg/mexYcAFEc9" target="_blank" rel="noopener noreferrer">Discord</a> ou écrivez-nous à <a href="mailto:contact@pirpg.com">contact@pirpg.com</a>.</p>
+    <p>Join us on <a href="https://discord.gg/mexYcAFEc9" target="_blank" rel="noopener noreferrer">Discord</a> or email us at <a href="mailto:contact@pirpg.com">contact@pirpg.com</a>.</p>
   </main>
 
   <footer>
-    © 2025 Pi RPG - Jeu en développement. Offre sujette à changement.
+    © 2025 Pi RPG - Game in development. Offer subject to change.
   </footer>
 
 </body>

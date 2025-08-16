@@ -1,87 +1,221 @@
-.roadmap {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
+@import url('./palette.css');
+
+/* === Reset === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--color-bg-main);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
   text-align: center;
-  font-family: "Poppins", sans-serif;
-  color: #fff;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
 }
 
-.roadmap h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #1a73e8, #ff6f61);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+p {
+  margin-bottom: 1rem;
 }
 
-.roadmap-subtitle {
-  opacity: 0.7;
-  margin-bottom: 50px;
-}
-
-.timeline {
+/* === Hero Banner === */
+.hero {
   position: relative;
-  padding-left: 2px;
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  height: 320px;
+  background: 
+    linear-gradient(120deg, var(--color-gradient-hero1), var(--color-gradient-hero2)),
+    url('../assets/2.webp') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
 }
 
-.timeline-item {
+/* === Hero Text Box === */
+.hero .hero-text {
+  background: var(--color-bg-glass);
+  border: 2px solid var(--color-primary);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  max-width: 90%;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-primary);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 12px var(--color-shadow-glass);
+  text-shadow: 0 0 8px var(--color-shadow-glass), 0 0 16px var(--color-gradient-hero2);
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0%,100% {
+    text-shadow: 0 0 8px var(--color-shadow-glass), 0 0 16px var(--color-gradient-hero2);
+  }
+  50% {
+    text-shadow: 0 0 12px var(--color-primary-light), 0 0 24px var(--color-primary);
+  }
+}
+
+/* === Sections centrées === */
+.section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* === Roadmap Timeline === */
+.roadmap {
   position: relative;
-  padding: 30px 0 30px 30px;
-  transition: transform 0.3s ease;
+  margin: 3rem auto;
+  padding: 0;
+  max-width: 800px;
+  list-style: none;
 }
 
-.timeline-item::before {
+.roadmap::before {
   content: "";
   position: absolute;
-  left: -11px;
-  top: 40px;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, #1a73e8, #ff6f61);
-  border-radius: 50%;
-  box-shadow: 0 0 10px #1a73e8, 0 0 20px #ff6f61;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-light));
+  border-radius: 2px;
 }
 
-.timeline-item:hover {
-  transform: translateX(10px);
+.roadmap li {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--color-shadow-card);
+  width: 45%;
+  color: var(--color-text-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.timeline-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+.roadmap li:nth-child(odd) {
+  left: 0;
 }
 
-.timeline-content p {
-  opacity: 0.8;
-  font-size: 1rem;
+.roadmap li:nth-child(even) {
+  left: 55%;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .roadmap h2 {
-    font-size: 2rem;
-  }
-  .timeline-content h3 {
-    font-size: 1.2rem;
-  }
+.roadmap li::before {
+  content: "◆";
+  position: absolute;
+  top: 1.2rem;
+  font-size: 1.4rem;
+  color: var(--color-primary);
 }
 
-.timeline-item {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.6s ease forwards;
+.roadmap li:nth-child(odd)::before {
+  right: -1.2rem;
 }
 
-.timeline-item:nth-child(1) { animation-delay: 0.2s; }
-.timeline-item:nth-child(2) { animation-delay: 0.4s; }
-.timeline-item:nth-child(3) { animation-delay: 0.6s; }
-.timeline-item:nth-child(4) { animation-delay: 0.8s; }
+.roadmap li:nth-child(even)::before {
+  left: -1.2rem;
+}
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.roadmap li:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 24px var(--color-shadow-card);
+}
+
+.roadmap li strong {
+  color: var(--color-primary);
+}
+
+.roadmap li:hover strong {
+  text-shadow: 0 0 8px var(--color-primary-light);
+}
+
+/* === Dialogue Box === */
+.dialogue-box {
+  background: var(--color-bg-glass);
+  border: 2px solid var(--color-primary);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  color: var(--color-text-light);
+  font-family: 'Orbitron', sans-serif;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 12px var(--color-shadow-glass);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.dialogue-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.5), 0 0 16px var(--color-primary-light);
+}
+
+.dialogue-box h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-primary);
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 6px var(--color-primary-light);
+}
+
+/* === Social Bar === */
+.social-bar {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.social-bar .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.btn-social {
+  text-decoration: none;
+  color: var(--color-text-light);
+  background: var(--color-bg-card);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-card);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-social:hover {
+  color: var(--color-primary);
+  box-shadow: 0 0 12px var(--color-primary-light);
+  transform: scale(1.05);
+}
+
+/* === Badge Animation === */
+.badge {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-right: 0.6rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
