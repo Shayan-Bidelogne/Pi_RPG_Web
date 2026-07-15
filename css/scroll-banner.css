@@ -28,6 +28,8 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  text-decoration: none;
+  color: inherit;
 }
 .logo img {
   height: 60px;
@@ -53,11 +55,12 @@ h1 {
   font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
-  background: url('../assets/DialogBox.png') center/100% 100% no-repeat;
+  background: url('../Assets/DialogBox.png') center/100% 100% no-repeat;
   color: #ecba60;
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  text-decoration: none;
   transition: filter 0.2s, transform 0.2s;
 }
 .menu .btn-primary:hover,

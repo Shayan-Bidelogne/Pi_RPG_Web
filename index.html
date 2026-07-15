@@ -15,7 +15,7 @@
   <meta charset="UTF-8" />
   <title>Pi RPG – Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="assets/LogoPi2.png" />
+  <link rel="icon" type="image/png" href="Assets/LogoPi2.png" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/palette.css" />
@@ -23,65 +23,92 @@
 </head>
 <body>
 <div id="scroll-banner-container"></div>
+<header class="site-header">
+  <div class="header-brand">
+    <img src="Assets/LogoPi2.png" alt="Pi RPG Logo" class="header-logo">
+    <div>
+      <p class="brand-label">Pi RPG</p>
+      <p class="brand-tagline">Choices, combat, and adventure</p>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <a href="#social">News</a>
+  </nav>
+</header>
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero exchange-section exchange-section--top">
   <div class="hero-content">
-    <img src="assets/LogoPi2.png" alt="Pi RPG Logo" class="hero-logo">
-    <p>A pixel-art RPG where every choice matters. Explore, fight, and uncover the mysteries of a 16px world.</p>
-    <a class="btn-prototype" id="button" href="Game3/Game3.html" target="_blank" rel="noopener">Prototype</a>
+    <img src="Assets/LogoPi2.png" alt="Pi RPG Logo" class="hero-logo">
+    <h1>Pi RPG</h1>
+    <p class="hero-copy">A pixel-art RPG where every choice matters. Explore, fight, and uncover the secrets of a 16px world full of mystery.</p>
+    <div class="hero-actions">
+      <a class="btn-prototype" id="button" href="Game4/index.html" target="_blank" rel="noopener">Prototype</a>
+    </div>
+  </div>
+  <div class="hero-walkway" aria-hidden="true" data-hero-walkway>
+    <canvas class="hero-terrain" data-hero-terrain></canvas>
+    <span class="hero-walkway__rail hero-walkway__rail--top"></span>
+    <span class="hero-walkway__rail hero-walkway__rail--bottom"></span>
+    <span class="hero-walkway__rail hero-walkway__rail--left"></span>
+    <span class="hero-walkway__rail hero-walkway__rail--right"></span>
+    <div class="hero-walker" data-hero-walker aria-hidden="true"></div>
   </div>
 </section>
 
   <!-- Game presentation -->
-  <section class="section">
-    <h2>Discover a unique adventure</h2>
-    <p>Pi RPG blends exploration, tactical combat, and immersive storytelling. Designed for retro gaming lovers, it delivers a modern experience while staying true to the charm of pixel art.</p>
+  <section class="section exchange-section exchange-section--bottom" id="discover">
+    <h2>A unique adventure</h2>
+    <p>Pi RPG blends exploration, tactical combat, and immersive storytelling. Designed for retro lovers, it delivers a modern experience with a warm pixel art atmosphere.</p>
     <div class="features">
-      <div class="team-card">
-        <h3>🌍 Open Exploration</h3>
-        <p>Freely explore a mysterious world full of secrets.</p>
+      <div class="feature">
+        <h3>🌍 Open exploration</h3>
+        <p>Wander through a mysterious world full of secrets and hidden passages.</p>
       </div>
-      <div class="team-card">
-        <h3>⚔️ Tactical Combat</h3>
-        <p>Face tough enemies with deep, strategic mechanics.</p>
+      <div class="feature">
+        <h3>⚔️ Strategic combat</h3>
+        <p>Face enemies with deep mechanics and challenging gameplay.</p>
       </div>
-      <div class="team-card">
-        <h3>🎨 Pixel Art</h3>
-        <p>A minimalist visual style packed with personality.</p>
+      <div class="feature">
+        <h3>🎨 Charming pixel art</h3>
+        <p>A minimalist retro style warmed by refined artistic direction.</p>
       </div>
     </div>
   </section>
 
-    <!-- Dynamic Team section -->
-  <div id="team-container"></div>
-  <div id="bestiary-container"></div>
+  <section class="learn-more-banner">
+    <div class="learn-banner-content">
+      <h2>Old-school world, modern immersion</h2>
+      <p>Pixelated lands, mysterious mood, and deep gameplay: Pi RPG brings together the best of retro and modern design.</p>
+    </div>
+    <a class="btn-primary" href="https://discord.gg/mexYcAFEc9" target="_blank" rel="noopener">Join Discord</a>
+    <div class="learn-more-orbit" data-banner-orbit aria-hidden="true">
+      <div class="learn-more-alligator" data-banner-alligator></div>
+    </div>
+  </section>
 
   <!-- Recruitment section -->
-  <section class="section">
-    <h2>Join Our Team</h2>
+  <section class="section" id="recruitment">
+    <h2>Join our team</h2>
     <p class="recruitment-intro">
-      We’re growing our indie studio and looking for passionate creators to join us.  
-      <br>Be part of an adventure beyond the game!
-    </p>
-    <p class="recruitment-intro">
-      Simple hiring process, revenue sharing model, and a friendly community 💝
+      We are growing our team and looking for passionate creators to join us.
+      <br>Be part of an adventure beyond the game! <span class="crystal-animation" aria-hidden="true"></span>
     </p>
 
     <div class="job-cards">
             <div class="team-card">
-        <h3>💻 Godot Developer</h3>
+        <h3>Godot Developer</h3>
         <p>Work on gameplay mechanics, performance, and features that enhance the player experience.</p>
         <br>
         <a href="https://discord.gg/mexYcAFEc9" target="_blank" class="btn-secondary">Apply</a>
       </div>
             <div class="team-card">
-        <h3>📶 Social Manager</h3>
+        <h3>Social Manager</h3>
         <p>Crafts engaging content and manages the online presence of Pi RPG, connecting the game with its community.</p>
         <br>
         <a href="https://discord.gg/mexYcAFEc9" target="_blank" class="btn-secondary">Apply</a>
       </div>
       <div class="team-card">
-        <h3>🎨 Pixel Animator</h3>
+        <h3>Pixel Animator</h3>
         <p>Help us bring new worlds to life with charming pixel art and creative animations.</p>
         <br>
         <a href="https://discord.gg/mexYcAFEc9" target="_blank" class="btn-secondary">Apply</a>
@@ -90,23 +117,30 @@
     </div>
 
   </section>
+  <section class="section twitter-section" id="social">
+    <h2>Our latest posts on X</h2>
+    <p>See our latest posts from the official Pi RPG account.</p>
 
+    <div class="twitter-grid">
+      <div class="twitter-card">
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/pi_rpg/status/1995075278427840933?s=20"></a></blockquote>
+      </div>
+      <div class="twitter-card">
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/pi_rpg/status/1975640810554335367?s=20"></a></blockquote>
+      </div>
+      <div class="twitter-card">
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/pi_rpg/status/1998859298378756342?s=20"></a></blockquote>
+      </div>
+    </div>
 
+  </section>
 
+  <footer class="site-footer">
+    <p>© 2026 Pi RPG. Prototype.</p>
+  </footer>
 
   <script src="js/main.js"></script>
-
-  <!-- Script to load finance.html + team.html + footer.html dynamically -->
-  <script>
-
-          // Load team.html
-    fetch('bestiary.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('team-container').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading bestiary:', error));
-  </script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script src="js/scroll-banner.js"></script>
 
 </body>

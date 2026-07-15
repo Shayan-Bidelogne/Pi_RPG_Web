@@ -2,13 +2,10 @@
 
 /* Scoped styles for bourse.html — semantic class names to avoid collisions */
 .bourse-page {
-  background: linear-gradient(
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.35)
-    ),
-    url('../assets/bg_exchange.png') center/cover no-repeat;
-  /* fallback to palette colors if gradients are defined in palette */
-  /* background: linear-gradient(var(--color-bg-gradient-start), var(--color-bg-gradient-end)), url('../assets/bg_exchange.png') center/cover no-repeat; */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('../Assets/bg_exchange0.png') center top / 100% 50% no-repeat,
+    url('../Assets/bg_exchange1.png') center bottom / 100% 50% no-repeat;
   color: var(--color-text-light);
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
@@ -109,7 +106,7 @@
 
 /* Make Buy buttons inside market-card use the usual .btn-primary / DialogBox look */
 .bourse-page .market-card .btn-primary {
-  background: url('../assets/DialogBox.png') center center / 100% 100% no-repeat;
+  background: url('../Assets/DialogBox.png') center center / 100% 100% no-repeat;
   color: var(--color-primary2);
   border: none;
   border-radius: 12px;
