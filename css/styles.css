@@ -179,87 +179,6 @@ body {
   background: transparent;
 }
 
-.hero-walkway {
-  position: absolute !important;
-  left: clamp(1rem, 4vw, 4rem);
-  right: clamp(1rem, 4vw, 4rem);
-  bottom: clamp(1.25rem, 5vw, 3.5rem);
-  height: clamp(140px, 24vw, 190px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-terrain {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 32px;
-  image-rendering: pixelated;
-}
-
-.hero-walkway__rail {
-  position: absolute;
-  background: linear-gradient(90deg, rgba(236, 186, 96, 0), rgba(236, 186, 96, 0.34), rgba(236, 186, 96, 0));
-  opacity: 0.8;
-}
-
-.hero-walkway__rail--top,
-.hero-walkway__rail--bottom {
-  left: 8%;
-  right: 8%;
-  height: 1px;
-}
-
-.hero-walkway__rail--top {
-  top: 28%;
-}
-
-.hero-walkway__rail--bottom {
-  bottom: 28%;
-}
-
-.hero-walkway__rail--left,
-.hero-walkway__rail--right {
-  top: 28%;
-  bottom: 28%;
-  width: 1px;
-  background: linear-gradient(180deg, rgba(236, 186, 96, 0), rgba(236, 186, 96, 0.34), rgba(236, 186, 96, 0));
-}
-
-.hero-walkway__rail--left {
-  left: 8%;
-}
-
-.hero-walkway__rail--right {
-  right: 8%;
-}
-
-.hero-walkway::before {
-  content: "";
-  position: absolute;
-  inset: 10% 0;
-  border-radius: 32px;
-  border: 1px solid rgba(236, 186, 96, 0.12);
-  background: linear-gradient(180deg, rgba(10, 16, 10, 0.08), rgba(10, 16, 10, 0.24));
-  box-shadow: inset 0 0 0 1px rgba(236, 186, 96, 0.05), 0 14px 42px rgba(0, 0, 0, 0.32);
-}
-
-.hero-walker {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 64px;
-  height: 64px;
-  background: url('../Assets/NPC_Player.png') 0 0 no-repeat;
-  background-size: 256px 256px;
-  image-rendering: pixelated;
-  will-change: transform;
-  z-index: 2;
-  filter: drop-shadow(0 0 8px rgba(236, 186, 96, 0.3));
-}
-
 /* === Boutons === */
 .btn-primary,
 .btn-secondary,
@@ -717,16 +636,6 @@ body {
   .learn-more-alligator {
     width: 40px;
     height: 40px;
-  }
-  .hero-walkway {
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 1rem;
-    height: 128px;
-  }
-  .hero-walker {
-    width: 56px;
-    height: 56px;
   }
 }
 
